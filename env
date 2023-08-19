@@ -6,3 +6,6 @@ DB_PORT=5432
 DB_USER=postgres
 DB_PASS=pg@tiger!1234
 DB_NAME=postgres
+
+REDIS_HOST=redis
+REDIS_PORT=6379
