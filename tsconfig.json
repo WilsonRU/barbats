@@ -12,8 +12,7 @@
         "typeRoots": ["src/shared/Express", "./node_modules/@types"],
         "baseUrl": "./src",
         "paths": {
-            "@utils/*": ["src/shared/utils/*"],
-            "@middlewares/*": ["src/middlewares/*"]
+            "@middlewares/*": ["middlewares/*"]
         }
     },
     "include": ["src/**/**/*", "src/**/*", "*.ts"],

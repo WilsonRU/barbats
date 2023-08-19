@@ -3,7 +3,7 @@ import 'express-async-errors';
 import cors from 'cors';
 import express from 'express';
 import { routes } from 'Routes';
-import { ErrorHandler } from 'middlewares/ErrorHandler';
+import { ErrorHandler } from '@middlewares/ErrorHandler';
 import { AppDataSource } from 'data-source';
 export class App {
     public server: express.Application;
