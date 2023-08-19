@@ -1,7 +1,6 @@
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import { userRepository } from '../Repository/UserRepository';
-import { SECRET_KEY } from '../../../shared/Common';
 import { AppError } from '../../../shared/Util/appError.util';
 
 export class GetUser {
@@ -18,9 +17,13 @@ export class GetUser {
         if (!result) {
             throw new AppError('Senha invalida, Tente Novamente!');
         }
-        const token = jwt.sign({ _id: user.id }, SECRET_KEY, {
-            expiresIn: '1 days',
-        });
+        const token = jwt.sign(
+            { _id: user.id },
+            process.env.JWT_SECRET != null ? process.env.JWT_SECRET : '',
+            {
+                expiresIn: '1 days',
+            },
+        );
 
         return {
             token,
