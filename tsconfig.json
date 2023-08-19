@@ -9,7 +9,12 @@
         "esModuleInterop": true,
         "types": ["node", "jest", "mocha"],
         "strictPropertyInitialization": false,
-        "typeRoots": ["src/shared/Express", "./node_modules/@types"]
+        "typeRoots": ["src/shared/Express", "./node_modules/@types"],
+        "baseUrl": "./src",
+        "paths": {
+            "@utils/*": ["src/shared/utils/*"],
+            "@middlewares/*": ["src/middlewares/*"]
+        }
     },
     "include": ["src/**/**/*", "src/**/*", "*.ts"],
     "exclude": [

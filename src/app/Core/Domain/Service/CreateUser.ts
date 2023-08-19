@@ -2,7 +2,7 @@ import bcrypt from 'bcrypt';
 import { validate } from 'class-validator';
 import { User } from '../Entity/User';
 import { userRepository } from '../Repository/UserRepository';
-import { AppError } from '../../../../shared/Util/appError.util';
+import { AppError } from 'shared/Util/appError.util';
 
 export class CreateUser {
     public async execute(

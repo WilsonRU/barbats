@@ -2,10 +2,9 @@ import * as dotenv from 'dotenv';
 import 'express-async-errors';
 import cors from 'cors';
 import express from 'express';
-import { routes } from './src/Routes';
-import { ErrorHandler } from './src/middlewares/ErrorHandler';
-import { AppDataSource } from './src/data-source';
-
+import { routes } from 'Routes';
+import { ErrorHandler } from 'middlewares/ErrorHandler';
+import { AppDataSource } from 'data-source';
 export class App {
     public server: express.Application;
 

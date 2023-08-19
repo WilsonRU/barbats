@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { Authentication } from './middlewares/Authentication';
+import { Authentication } from 'middlewares/Authentication';
 
 import { LoginAction } from './app/Core/Application/Rest/LoginAction';
 import { SignupAction } from './app/Core/Application/Rest/SignupAction';

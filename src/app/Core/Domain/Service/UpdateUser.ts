@@ -1,6 +1,6 @@
 import { validate } from 'class-validator';
 import { userRepository } from '../Repository/UserRepository';
-import { AppError } from '../../../../shared/Util/appError.util';
+import { AppError } from 'shared/Util/appError.util';
 
 export class UpdateUser {
     public async execute(id: number, name: string): Promise<void> {
