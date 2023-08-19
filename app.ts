@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/restrict-template-expressions */
 import * as dotenv from 'dotenv';
 import 'express-async-errors';
 import cors from 'cors';
@@ -7,17 +6,29 @@ import { routes } from './src/Routes';
 import { ErrorHandler } from './src/middlewares/ErrorHandler';
 import { AppDataSource } from './src/data-source';
 
-dotenv.config();
-const app = express();
+export class App {
+    public server: express.Application;
 
-app.use(express.json());
-app.use(cors());
+    constructor() {
+        this.server = express();
+        this.middleware();
+        this.router();
+        dotenv.config();
+    }
 
-app.use(routes);
-app.use(ErrorHandler);
+    private middleware() {
+        this.server.use(express.json());
+        this.server.use(cors());
+    }
+
+    private router() {
+        this.server.use(routes);
+        this.server.use(ErrorHandler);
+    }
+}
 
 void AppDataSource.initialize().then(() => {
-    app.listen(process.env.APP_PORT, () => {
+    new App().server.listen(process.env.APP_PORT, () => {
         console.log(`Server is running in port ${process.env.APP_PORT} 🚀`);
     });
 });
