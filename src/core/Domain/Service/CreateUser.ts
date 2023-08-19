@@ -5,7 +5,7 @@ import { userRepository } from '../Repository/UserRepository';
 import { AppError } from '../../../shared/Util/appError.util';
 
 export class CreateUser {
-    async execute(
+    public async execute(
         email: string,
         password: string,
         name: string,
