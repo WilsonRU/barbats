@@ -1,7 +1,7 @@
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import { userRepository } from '../Repository/UserRepository';
-import { AppError } from '../../../shared/Util/appError.util';
+import { AppError } from '../../../../shared/Util/appError.util';
 
 export class GetUser {
     public async execute(email: string, password: string): Promise<any> {

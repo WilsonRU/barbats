@@ -1,9 +1,9 @@
 import { Router } from 'express';
 import { Authentication } from './middlewares/Authentication';
 
-import { LoginAction } from './core/Application/Rest/LoginAction';
-import { SignupAction } from './core/Application/Rest/SignupAction';
-import { UpdateUserAction } from './core/Application/Rest/UpdateUserAction';
+import { LoginAction } from './app/Core/Application/Rest/LoginAction';
+import { SignupAction } from './app/Core/Application/Rest/SignupAction';
+import { UpdateUserAction } from './app/Core/Application/Rest/UpdateUserAction';
 
 const loginAction = new LoginAction();
 const signupAction = new SignupAction();

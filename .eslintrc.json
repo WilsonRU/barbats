@@ -5,6 +5,7 @@
     },
     "rules": {
         "semi": "off",
+        "no-useless-escape": "off",
         "@typescript-eslint/semi": "off",
         "@typescript-eslint/space-before-blocks": "off",
         "@typescript-eslint/indent": "off",
@@ -12,6 +13,7 @@
         "@typescript-eslint/no-throw-literal": "off",
         "@typescript-eslint/no-extraneous-class": "off",
         "@typescript-eslint/comma-dangle": "off",
+        "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/space-before-function-paren": "off",
         "@typescript-eslint/member-delimiter-style": [
             "warn",

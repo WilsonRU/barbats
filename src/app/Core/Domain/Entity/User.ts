@@ -11,7 +11,7 @@ import { Rules } from '../Enum/Rules';
 
 @Entity('users')
 export class User {
-    @PrimaryGeneratedColumn()
+    @PrimaryGeneratedColumn('increment')
     id: number;
 
     @Column({ type: 'varchar' })

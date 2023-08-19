@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { Header } from '../../../shared/Util/header.util';
+import { Header } from '../../../../shared/Util/header.util';
 import { UpdateUser } from '../../Domain/Service/UpdateUser';
 
 export class UpdateUserAction {

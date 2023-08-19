@@ -1,4 +1,3 @@
-/* eslint-disable no-useless-escape */
 export class Slugfy {
     static format(text: string): string {
         return text
