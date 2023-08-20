@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 import jwt, { JwtPayload } from 'jsonwebtoken';
-import { AppError } from '../shared/Util/appError.util';
+import { AppError } from '@util/appError.util';
 export interface CustomRequest extends Request {
     token: JwtPayload | string;
 }

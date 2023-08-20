@@ -1,8 +1,9 @@
 import { Request, Response } from 'express';
 import { UpdateUser } from '../../Domain/Service/UpdateUser';
-import { Header } from 'shared/Util/header.util';
-export class UpdateUserAction {
-    public async __invoke(req: Request, res: Response): Promise<Response> {
+import { Header } from '@util/header.util';
+import { RestInterface } from '@interfaces/RestInterface';
+export class UpdateUserAction implements RestInterface {
+    public async respond(req: Request, res: Response): Promise<Response> {
         const id = Header.get(req);
 
         const { name } = req.body;

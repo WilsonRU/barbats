@@ -11,9 +11,9 @@ const updateAction = new UpdateUserAction();
 
 const coreRoutes = Router();
 
-coreRoutes.post('/login', loginAction.__invoke);
-coreRoutes.post('/signup', signupAction.__invoke);
-coreRoutes.put('/', Authentication, updateAction.__invoke);
+coreRoutes.post('/login', loginAction.respond);
+coreRoutes.post('/signup', signupAction.respond);
+coreRoutes.put('/', Authentication, updateAction.respond);
 
 const routes = Router();
 
