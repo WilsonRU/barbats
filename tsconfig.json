@@ -12,11 +12,12 @@
         "typeRoots": ["src/shared/Express", "./node_modules/@types"],
         "baseUrl": "./src",
         "paths": {
-            "@middlewares/*": ["middlewares/*"],
-            "@util/*": ["shared/Util/*"],
-            "@interfaces/*": ["shared/Interfaces/*"],
-            "@http/*": ["shared/Http/*"]
-        }
+            "@middlewares/*": ["./middlewares/*"],
+            "@util/*": ["./shared/Util/*"],
+            "@interfaces/*": ["./shared/Interfaces/*"],
+            "@http/*": ["./shared/Http/*"]
+        },
+        "traceResolution": true
     },
     "include": ["src/**/**/*", "src/**/*", "*.ts"],
     "exclude": [

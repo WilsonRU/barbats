@@ -1,5 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 import { AppError } from '@util/appError.util';
+import { StatusCode } from '@http/StatusCode';
 
 export const ErrorHandler = async (
     err: Error,
@@ -14,7 +15,7 @@ export const ErrorHandler = async (
         });
     }
 
-    return response.status(500).json({
+    return response.status(StatusCode.INTERNAL_SERVER_ERRRO).json({
         status: 'error',
         message: `[Internal server error] - ${err.message}`,
     });

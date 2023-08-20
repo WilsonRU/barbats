@@ -1,21 +1,24 @@
 import { Router } from 'express';
 import { Authentication } from '@middlewares/Authentication';
+import { RouteConfig } from '@interfaces/RoutesConfig';
+import { RouterFactory } from '@http/RouterFactory';
 
 import { LoginAction } from './app/Core/Application/Rest/LoginAction';
 import { SignupAction } from './app/Core/Application/Rest/SignupAction';
 import { UpdateUserAction } from './app/Core/Application/Rest/UpdateUserAction';
 
-const loginAction = new LoginAction();
-const signupAction = new SignupAction();
-const updateAction = new UpdateUserAction();
-
-const coreRoutes = Router();
-
-coreRoutes.post('/login', loginAction.respond);
-coreRoutes.post('/signup', signupAction.respond);
-coreRoutes.put('/', Authentication, updateAction.respond);
-
 const routes = Router();
+
+const coreRouteConfigs: RouteConfig[] = [
+    { method: 'POST', path: '/login', handlers: [new LoginAction().respond] },
+    { method: 'POST', path: '/signup', handlers: [new SignupAction().respond] },
+    {
+        method: 'PUT',
+        path: '/',
+        handlers: [Authentication, new UpdateUserAction().respond],
+    },
+];
+const coreRoutes = RouterFactory.createRouter(coreRouteConfigs);
 
 routes.use('/core', coreRoutes);
 

@@ -1,10 +1,14 @@
+import { StatusCode } from '@http/StatusCode';
 export class AppError {
-  public readonly message: string;
+    public readonly message: string;
 
-  public readonly statusCode: number;
+    public readonly statusCode: number;
 
-  constructor (message: string, statusCode = 500) {
-    this.message = message;
-    this.statusCode = statusCode;
-  }
+    constructor(
+        message: string,
+        statusCode = StatusCode.INTERNAL_SERVER_ERRRO,
+    ) {
+        this.message = message;
+        this.statusCode = statusCode;
+    }
 }

@@ -1,6 +1,7 @@
 import { NextFunction, Request, Response } from 'express';
 import jwt, { JwtPayload } from 'jsonwebtoken';
 import { AppError } from '@util/appError.util';
+import { StatusCode } from '@http/StatusCode';
 export interface CustomRequest extends Request {
     token: JwtPayload | string;
 }
@@ -14,7 +15,7 @@ export const Authentication = async (
         const token = req.header('Authorization')?.replace('Bearer ', '');
 
         if (token == null) {
-            throw new AppError('Token não encontrado', 401);
+            throw new AppError('Token não encontrado', StatusCode.UNAUTHORIZED);
         }
 
         const decoded = jwt.verify(
@@ -24,6 +25,9 @@ export const Authentication = async (
         (req as CustomRequest).token = decoded;
         next();
     } catch (error) {
-        throw new AppError('Token expirado ou inválido', 418);
+        throw new AppError(
+            'Token expirado ou inválido',
+            StatusCode.IM_A_TEAPOT,
+        );
     }
 };
