@@ -1,6 +1,6 @@
 Este é um mini framework para criar APIs RESTful usando TypeScript, TypeORM e Express. Ele fornece uma estrutura básica e pré-configurada para desenvolver APIs de forma eficiente e organizada.
 
-## Requisitos de Instalação
+### Requisitos de Instalação
 
 -   [Docker](https://www.docker.com/)
 
@@ -32,9 +32,8 @@ Este é um mini framework para criar APIs RESTful usando TypeScript, TypeORM e E
 
     `docker-compose run --rm node yarn test`
 
-"Falta Implementar os Testes"
 ### Estrutura do Projeto
-`
+
 |-- src/
 | |-- app/
 | |-- migrations/
@@ -56,7 +55,7 @@ Este é um mini framework para criar APIs RESTful usando TypeScript, TypeORM e E
 |-- .prettierrc.json
 |-- .editorconfig
 |-- tsconfig.json
-`
+
 - **`src/app/`**: Contém todo mu da API.
 - **`src/middlewares/`**: Contém middlewares personalizados.
 - **`src/shared/`**: Contém utilitário personalizados.
