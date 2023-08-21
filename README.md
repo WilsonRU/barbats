@@ -33,7 +33,6 @@ Este é um mini framework para criar APIs RESTful usando TypeScript, TypeORM e E
     `docker-compose run --rm node yarn test`
 
 ### Estrutura do Projeto
-`
 - `src/`: Este é o diretório raiz para o seu código-fonte.
   - `app/`: Este diretório provavelmente contém a lógica principal da aplicação.
   - `migrations/`: Este diretório poderia conter scripts de migração de banco de dados.
