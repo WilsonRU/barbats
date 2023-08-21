@@ -16,7 +16,7 @@ Este é um mini framework para criar APIs RESTful usando TypeScript, TypeORM e E
 ### Comandos de Desenvolvimento
 
 -   Caso precise adicionar algum pacote utilize o
-    
+
     `docker-compose run --rm node yarn add <pacote>`
 
 -   Criando uma migration para banco de dados
@@ -33,23 +33,24 @@ Este é um mini framework para criar APIs RESTful usando TypeScript, TypeORM e E
     `docker-compose run --rm node yarn test`
 
 ### Estrutura do Projeto
-- `src/`: Este é o diretório raiz para o seu código-fonte.
-  - `app/`: Este diretório provavelmente contém a lógica principal da aplicação.
-  - `migrations/`: Este diretório poderia conter scripts de migração de banco de dados.
-  - `middlewares/`: Middlewares usados na sua aplicação.
-  - `shared/`: Arquivos ou módulos utilitários compartilhados.
-    - `Express/`, `Http/`, `Interfaces/`, `Util/`: Esses subdiretórios dentro de `shared/` sugerem a organização de diferentes módulos utilitários.
-  - `data-source.ts`: Um arquivo TypeScript contendo a lógica da fonte de dados.
-- `app.ts`: O ponto de entrada da sua aplicação.
-- `env.example`: Esses são arquivos de configuração de ambiente. Geralmente, o `env.example` contém valores de configuração de exemplo.
-- `.gitignore`: Um arquivo que especifica quais arquivos e diretórios devem ser ignorados pelo controle de versão do Git.
-- `package.json`: O arquivo de configuração de pacotes do Node.js, contendo dependências e informações do projeto.
-- `.eslint.json`: Configuração para o ESLint, uma ferramenta usada para linting de código.
-- `tslint.json`: Configuração para o TSLint, outra ferramenta para linting de código TypeScript.
-- `jest.config.ts`: Configuração para o Jest, um framework de testes.
-- `.prettierrc.json`: Configuração para o Prettier, uma ferramenta de formatação de código.
-- `.editorconfig`: Configuração para as configurações do editor de código, como indentação, quebra de linha, etc.
-- `tsconfig.json`: Configuração para as opções de compilação do TypeScript.
+
+-   `src/`: Este é o diretório raiz para o seu código-fonte.
+    -   `app/`: Este diretório provavelmente contém a lógica principal da aplicação.
+    -   `migrations/`: Este diretório poderia conter scripts de migração de banco de dados.
+    -   `middlewares/`: Middlewares usados na sua aplicação.
+    -   `shared/`: Arquivos ou módulos utilitários compartilhados.
+        -   `Express/`, `Http/`, `Interfaces/`, `Util/`: Esses subdiretórios dentro de `shared/` sugerem a organização de diferentes módulos utilitários.
+    -   `data-source.ts`: Um arquivo TypeScript contendo a lógica da fonte de dados.
+-   `app.ts`: O ponto de entrada da sua aplicação.
+-   `env.example`: Esses são arquivos de configuração de ambiente. Geralmente, o `env.example` contém valores de configuração de exemplo.
+-   `.gitignore`: Um arquivo que especifica quais arquivos e diretórios devem ser ignorados pelo controle de versão do Git.
+-   `package.json`: O arquivo de configuração de pacotes do Node.js, contendo dependências e informações do projeto.
+-   `.eslint.json`: Configuração para o ESLint, uma ferramenta usada para linting de código.
+-   `tslint.json`: Configuração para o TSLint, outra ferramenta para linting de código TypeScript.
+-   `jest.config.ts`: Configuração para o Jest, um framework de testes.
+-   `.prettierrc.json`: Configuração para o Prettier, uma ferramenta de formatação de código.
+-   `.editorconfig`: Configuração para as configurações do editor de código, como indentação, quebra de linha, etc.
+-   `tsconfig.json`: Configuração para as opções de compilação do TypeScript.
 
 ### Referências
 

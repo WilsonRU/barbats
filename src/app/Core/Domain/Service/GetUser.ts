@@ -2,18 +2,19 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import { userRepository } from '../Repository/UserRepository';
 import { AppError } from '@util/appError.util';
+import { GetUserDto } from '../Dto/GetUserDto';
 
 export class GetUser {
-    public async execute(email: string, password: string): Promise<any> {
+    public async execute(userDto: GetUserDto): Promise<any> {
         const user = await userRepository.findOneBy({
-            email,
+            email: userDto.email,
         });
 
         if (user == null) {
             throw new AppError('Usuário não encontrado.');
         }
 
-        const result = bcrypt.compareSync(password, user.password);
+        const result = bcrypt.compareSync(userDto.password, user.password);
         if (!result) {
             throw new AppError('Senha invalida, Tente Novamente!');
         }

@@ -1,18 +1,19 @@
 import { validate } from 'class-validator';
 import { userRepository } from '../Repository/UserRepository';
 import { AppError } from '@util/appError.util';
+import { UpdateUserDto } from '../Dto/UpdateUserDto';
 
 export class UpdateUser {
-    public async execute(id: number, name: string): Promise<void> {
+    public async execute(updateUserDto: UpdateUserDto): Promise<void> {
         const user = await userRepository.findOneBy({
-            id,
+            id: updateUserDto.id,
         });
 
         if (user == null) {
             throw new AppError('Usuário não encontrado');
         }
 
-        user.name = name;
+        user.name = updateUserDto.name;
 
         const errors = await validate(user);
         if (errors.length > 0) {

@@ -1,14 +1,19 @@
 import { Request, Response } from 'express';
 import { RestInterface } from '@interfaces/RestInterface';
 import { StatusCode } from '@http/StatusCode';
-import { CreateUser } from '../../Domain/Service/CreateUser';
+import { CreateUserDto } from 'app/Core/Domain/Dto/CreateUserDto';
+import { CreateUser } from 'app/Core/Domain/Service/CreateUser';
 
 export class SignupAction implements RestInterface {
     public async respond(req: Request, res: Response): Promise<Response> {
-        const { email, password, name } = req.body;
+        const createUserDto: CreateUserDto = {
+            email: req.body.email,
+            password: req.body.password,
+            name: req.body.name,
+        };
 
         const createUser = new CreateUser();
-        await createUser.execute(email, password, name);
+        await createUser.execute(createUserDto);
 
         return res.status(StatusCode.CREATED).json({
             status_code: StatusCode.CREATED,
