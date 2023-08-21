@@ -42,7 +42,7 @@ Este é um mini framework para criar APIs RESTful usando TypeScript, TypeORM e E
         -   `Express/`, `Http/`, `Interfaces/`, `Util/`: Esses subdiretórios dentro de `shared/` sugerem a organização de diferentes módulos utilitários.
     -   `data-source.ts`: Um arquivo TypeScript contendo a lógica da fonte de dados.
 -   `app.ts`: O ponto de entrada da sua aplicação.
--   `env.example`: Esses são arquivos de configuração de ambiente. Geralmente, o `env.example` contém valores de configuração de exemplo.
+-   `env`: Esses são arquivos de configuração de ambiente. Geralmente, o `env.example` contém valores de configuração de exemplo.
 -   `.gitignore`: Um arquivo que especifica quais arquivos e diretórios devem ser ignorados pelo controle de versão do Git.
 -   `package.json`: O arquivo de configuração de pacotes do Node.js, contendo dependências e informações do projeto.
 -   `.eslint.json`: Configuração para o ESLint, uma ferramenta usada para linting de código.
