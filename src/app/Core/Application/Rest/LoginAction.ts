@@ -4,6 +4,7 @@ import { StatusCode } from '@http/StatusCode';
 
 import { GetUserDto } from 'app/Core/Domain/Dto/GetUserDto';
 import { GetUser } from 'app/Core/Domain/Service/GetUser';
+
 export class LoginAction implements RestInterface {
     public async respond(req: Request, res: Response): Promise<Response> {
         const userDto: GetUserDto = {
