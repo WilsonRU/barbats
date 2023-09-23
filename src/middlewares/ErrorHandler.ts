@@ -17,6 +17,6 @@ export const ErrorHandler = async (
 
     return response.status(StatusCode.INTERNAL_SERVER_ERRRO).json({
         status: 'error',
-        message: `[Internal server error] - ${err.message}`,
+        message: err.message,
     });
 };

@@ -1,6 +1,7 @@
 import { AppError } from '@util/appError.util';
 import { RouteConfig } from '@interfaces/RoutesConfig';
 import { Router } from 'express';
+import { StatusCode } from './StatusCode';
 
 export class RouterFactory {
     static createRouter(routeConfigs: RouteConfig[]): Router {
@@ -26,6 +27,7 @@ export class RouterFactory {
                 default:
                     throw new AppError(
                         `Unsupported HTTP method: ${config.method}`,
+                        StatusCode.BAD_REQUEST,
                     );
             }
         });

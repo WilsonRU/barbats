@@ -8,8 +8,8 @@
         "lint": "eslint .",
         "lint:fix": "eslint . --fix",
         "test": "jest --passWithNoTests --detectOpenHandles",
-        "migration:generate": "typeorm-ts-node-commonjs -d ./src/data-source.ts migration:generate ./src/migrations/default",
-        "migration:run": "typeorm-ts-node-commonjs -d ./src/data-source.ts migration:run"
+        "migration:generate": "typeorm-ts-node-commonjs -r tsconfig-paths/register -d ./src/data-source.ts migration:generate ./src/migrations/default",
+        "migration:run": "typeorm-ts-node-commonjs -r tsconfig-paths/register -d ./src/data-source.ts migration:run"
     },
     "dependencies": {
         "@types/bcrypt": "^5.0.0",

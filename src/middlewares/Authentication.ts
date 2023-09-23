@@ -25,9 +25,6 @@ export const Authentication = async (
         (req as CustomRequest).token = decoded;
         next();
     } catch (error) {
-        throw new AppError(
-            'Token expirado ou inválido',
-            StatusCode.IM_A_TEAPOT,
-        );
+        throw new AppError('Token expirado ou inválido', StatusCode.CONFLICT);
     }
 };
