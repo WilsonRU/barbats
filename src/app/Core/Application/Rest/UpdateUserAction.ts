@@ -3,7 +3,7 @@ import { Header } from '@util/header.util';
 import { RestInterface } from '@interfaces/RestInterface';
 import { StatusCode } from '@http/StatusCode';
 
-import { UpdateUser } from '../../Domain/Service/UpdateUser';
+import { UpdateUser } from 'app/Core/Domain/Service/UpdateUser';
 import { UpdateUserDto } from 'app/Core/Domain/Dto/UpdateUserDto';
 
 export class UpdateUserAction implements RestInterface {

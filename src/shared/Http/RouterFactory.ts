@@ -27,7 +27,7 @@ export class RouterFactory {
                 default:
                     throw new AppError(
                         `Unsupported HTTP method: ${config.method}`,
-                        StatusCode.BAD_REQUEST,
+                        StatusCode.INTERNAL_SERVER_ERRRO,
                     );
             }
         });
