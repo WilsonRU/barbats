@@ -1,5 +1,4 @@
 import bcrypt from 'bcrypt';
-import { validate } from 'class-validator';
 import { AppError } from '@util/appError.util';
 import { CreateUserDto } from '../Dto/CreateUserDto';
 import { userRepository } from '../Repository/UserRepository';
@@ -8,29 +7,25 @@ import { User } from '../Entity/User';
 export class CreateUser {
     public async execute(createUserDto: CreateUserDto): Promise<User> {
         const userAlreadyExists = await userRepository.findOneBy({
-            email: createUserDto.email,
+            email: createUserDto.getEmail(),
         });
         if (userAlreadyExists != null) {
             throw new AppError('Já existe usuário com esse email!');
         }
 
         const passwordHash: string = bcrypt.hashSync(
-            createUserDto.password,
+            createUserDto.getPassword(),
             bcrypt.genSaltSync(10),
         );
 
         const user = userRepository.create({
-            email: createUserDto.email,
+            email: createUserDto.getEmail(),
             password: passwordHash,
-            name: createUserDto.name,
+            name: createUserDto.getPassword(),
         });
 
-        const errors = await validate(user);
-        if (errors.length > 0) {
-            throw new AppError('Ocorreu um erro. Tente Novamente');
-        } else {
-            await userRepository.save(user);
-        }
+        await userRepository.save(user);
+
         return user;
     }
 }

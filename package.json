@@ -12,6 +12,7 @@
         "migration:run": "typeorm-ts-node-commonjs -r tsconfig-paths/register -d ./src/data-source.ts migration:run"
     },
     "dependencies": {
+        "@types/assert": "^1.5.10",
         "@types/bcrypt": "^5.0.0",
         "@types/cors": "^2.8.13",
         "@types/jsonwebtoken": "^8.5.9",

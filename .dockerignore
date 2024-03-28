@@ -1,0 +1,12 @@
+.editorconfig
+.eslintignore
+.eslintrc.json
+.gitignore
+.prettierrc.json
+docker-compose.yml
+jest.config.ts
+README.md
+tslit.json
+.vscode
+dockerfiles
+node_modules

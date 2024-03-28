@@ -1,9 +1,10 @@
 import nodemailer from 'nodemailer';
 import { ComposeEmailInterface } from '@interfaces/ComposeEmailInterface';
 import { AppError } from '@util/appError.util';
+import { StatusCode } from '@http/StatusCode';
 
 export class Mail {
-    private readonly options: any;
+    private readonly options: object;
 
     constructor() {
         this.options = {
@@ -17,18 +18,18 @@ export class Mail {
         };
     }
 
-    public async send(config: ComposeEmailInterface): Promise<void> {
+    public async send(compose: ComposeEmailInterface): Promise<void> {
         const transport = nodemailer.createTransport(this.options);
 
         try {
             await transport.sendMail({
                 from: process.env.MAIL_FROM,
-                to: config.to,
-                subject: config.subject,
-                html: config.message,
+                to: compose.to,
+                subject: compose.subject,
+                html: compose.message,
             });
         } catch (error) {
-            throw new AppError(`${error}`);
+            throw new AppError(`Mail: ${error}`, StatusCode.GATEWAY_TIMEOUT);
         }
     }
 }

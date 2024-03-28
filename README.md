@@ -1,9 +1,5 @@
 Este é um mini framework para criar APIs RESTful usando TypeScript, TypeORM e Express. Ele fornece uma estrutura básica e pré-configurada para desenvolver APIs de forma eficiente e organizada.
 
-### Requisitos de Instalação
-
--   [Docker](https://www.docker.com/)
-
 ### Instalação
 
 -   Clone esse repositorio
@@ -26,6 +22,7 @@ Este é um mini framework para criar APIs RESTful usando TypeScript, TypeORM e E
 -   Executar TSLint
 
     `docker-compose run --rm node yarn lint`
+
     `docker-compose run --rm node yarn lint:fix`
 
 -   Executar Tests
@@ -59,6 +56,7 @@ Este é um mini framework para criar APIs RESTful usando TypeScript, TypeORM e E
 -   [TypeORM](https://typeorm.io/)
 -   [Express](https://expressjs.com/pt-br/)
 -   [Arquitetura Hexagonal](https://engsoftmoderna.info/artigos/arquitetura-hexagonal.html)
+-   [Docker](https://www.docker.com/)
 
 ### Contribuição
 

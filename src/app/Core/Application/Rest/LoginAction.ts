@@ -7,10 +7,7 @@ import { GetUser } from 'app/Core/Domain/Service/GetUser';
 
 export class LoginAction implements RestInterface {
     public async respond(req: Request, res: Response): Promise<Response> {
-        const userDto: GetUserDto = {
-            email: req.body.email,
-            password: req.body.password,
-        };
+        const userDto = GetUserDto.fromArray(req.body);
 
         const getUser = new GetUser();
         const result = await getUser.execute(userDto);

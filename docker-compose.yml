@@ -1,9 +1,9 @@
-version: '3.1'
 services:
     node:
         build: dockerfiles
-        container_name: node-api
+        container_name: bts-node
         working_dir: /usr/src/app
+        restart: always
         volumes:
             - .:/usr/src/app
         ports:
@@ -11,7 +11,7 @@ services:
 
     postgres:
         image: postgres
-        container_name: postgres
+        container_name: bts-pgsl
         environment:
             POSTGRES_PASSWORD: 'pg@tiger!1234'
         ports:
@@ -19,6 +19,6 @@ services:
 
     redis:
         image: redis:latest
-        container_name: redis
+        container_name: bts-redis
         ports:
             - '6379:6379'

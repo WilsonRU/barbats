@@ -6,11 +6,7 @@ import { CreateUser } from 'app/Core/Domain/Service/CreateUser';
 
 export class SignupAction implements RestInterface {
     public async respond(req: Request, res: Response): Promise<Response> {
-        const createUserDto: CreateUserDto = {
-            email: req.body.email,
-            password: req.body.password,
-            name: req.body.name,
-        };
+        const createUserDto = CreateUserDto.fromArray(req.body);
 
         const createUser = new CreateUser();
         await createUser.execute(createUserDto);

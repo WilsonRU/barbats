@@ -10,10 +10,8 @@ export class UpdateUserAction implements RestInterface {
     public async respond(req: Request, res: Response): Promise<Response> {
         const id = Header.get(req);
 
-        const updateUserDto: UpdateUserDto = {
-            id,
-            name: req.body.name,
-        };
+        req.body.id = id;
+        const updateUserDto = UpdateUserDto.fromArray(req.body);
 
         const updateUser = new UpdateUser();
         await updateUser.execute(updateUserDto);

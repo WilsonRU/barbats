@@ -7,14 +7,14 @@ import { GetUserDto } from '../Dto/GetUserDto';
 export class GetUser {
     public async execute(userDto: GetUserDto): Promise<any> {
         const user = await userRepository.findOneBy({
-            email: userDto.email,
+            email: userDto.getEmail(),
         });
 
         if (user == null) {
             throw new AppError('Usuário não encontrado.');
         }
 
-        const result = bcrypt.compareSync(userDto.password, user.password);
+        const result = bcrypt.compareSync(userDto.getPassword(), user.password);
         if (!result) {
             throw new AppError('Senha invalida, Tente Novamente!');
         }

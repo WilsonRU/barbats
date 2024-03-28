@@ -1,4 +1,3 @@
-import { IsEmail, IsNotEmpty, IsString } from 'class-validator';
 import {
     Column,
     CreateDateColumn,
@@ -15,18 +14,12 @@ export class User {
     id: number;
 
     @Column({ type: 'varchar' })
-    @IsEmail()
-    @IsNotEmpty()
     email: string;
 
     @Column({ type: 'varchar' })
-    @IsString()
-    @IsNotEmpty()
     password: string;
 
     @Column({ type: 'varchar' })
-    @IsString()
-    @IsNotEmpty()
     name: string;
 
     @Column({ type: 'enum', enum: Rules, default: Rules.USER })
