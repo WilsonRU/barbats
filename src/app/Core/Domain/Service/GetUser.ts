@@ -5,7 +5,7 @@ import { AppError } from '@util/appError.util';
 import { GetUserDto } from '../Dto/GetUserDto';
 
 export class GetUser {
-    public async execute(userDto: GetUserDto): Promise<any> {
+    public async execute(userDto: GetUserDto): Promise<object> {
         const user = await userRepository.findOneBy({
             email: userDto.getEmail(),
         });
