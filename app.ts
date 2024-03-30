@@ -1,5 +1,6 @@
 import * as dotenv from 'dotenv';
 import cors from 'cors';
+import compression from 'compression';
 import express from 'express';
 import { routes } from 'Routes';
 import { ErrorHandler } from '@middlewares/ErrorHandler';
@@ -18,6 +19,7 @@ export class App {
     private middleware() {
         this.server.use(express.json());
         this.server.use(cors());
+        this.server.use(compression());
     }
 
     private router() {
