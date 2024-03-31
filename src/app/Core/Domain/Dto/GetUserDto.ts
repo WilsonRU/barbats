@@ -1,20 +1,12 @@
 import { Assert } from '@util/assert.util';
 
 export class GetUserDto {
-    private readonly email: string;
-    private readonly password: string;
+    public readonly email: string;
+    public readonly password: string;
 
     constructor(email: string, password: string) {
         this.email = email;
         this.password = password;
-    }
-
-    public getEmail(): string {
-        return this.email;
-    }
-
-    public getPassword(): string {
-        return this.password;
     }
 
     private static validate(params: any): void {

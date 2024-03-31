@@ -7,21 +7,21 @@ import { User } from '../Entity/User';
 export class CreateUser {
     public async execute(createUserDto: CreateUserDto): Promise<User> {
         const userAlreadyExists = await userRepository.findOneBy({
-            email: createUserDto.getEmail(),
+            email: createUserDto.email,
         });
         if (userAlreadyExists != null) {
             throw new AppError('Já existe usuário com esse email!');
         }
 
         const passwordHash: string = bcrypt.hashSync(
-            createUserDto.getPassword(),
+            createUserDto.password,
             bcrypt.genSaltSync(10),
         );
 
         const user = userRepository.create({
-            email: createUserDto.getEmail(),
+            email: createUserDto.email,
             password: passwordHash,
-            name: createUserDto.getPassword(),
+            name: createUserDto.password,
         });
 
         await userRepository.save(user);

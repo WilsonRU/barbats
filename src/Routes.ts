@@ -3,9 +3,9 @@ import { Authentication } from '@middlewares/Authentication';
 import { RouteConfig } from '@interfaces/RoutesConfig';
 import { RouterFactory } from '@http/RouterFactory';
 
-import { LoginAction } from './app/Core/Application/Rest/LoginAction';
-import { SignupAction } from './app/Core/Application/Rest/SignupAction';
-import { UpdateUserAction } from './app/Core/Application/Rest/UpdateUserAction';
+import { LoginAction } from '@app/Core/Application/Rest/LoginAction';
+import { SignupAction } from '@app/Core/Application/Rest/SignupAction';
+import { UpdateUserAction } from '@app/Core/Application/Rest/UpdateUserAction';
 
 const routes = Router();
 

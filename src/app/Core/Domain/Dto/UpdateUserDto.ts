@@ -1,20 +1,12 @@
 import { Assert } from '@util/assert.util';
 
 export class UpdateUserDto {
-    private readonly id: number;
-    private readonly name: string;
+    public readonly id: number;
+    public readonly name: string;
 
     constructor(id: number, name: string) {
         this.id = id;
         this.name = name;
-    }
-
-    public getId(): number {
-        return this.id;
-    }
-
-    public getName(): string {
-        return this.name;
     }
 
     private static validate(params: any): void {

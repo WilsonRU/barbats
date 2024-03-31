@@ -15,7 +15,8 @@
             "@middlewares/*": ["./middlewares/*"],
             "@util/*": ["./shared/Util/*"],
             "@interfaces/*": ["./shared/Interfaces/*"],
-            "@http/*": ["./shared/Http/*"]
+            "@http/*": ["./shared/Http/*"],
+            "@app/*": ["./app/*"]
         },
         "traceResolution": true
     },
