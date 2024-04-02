@@ -1,4 +1,4 @@
-import { userRepository } from '../Repository/UserRepository';
+import { userRepository } from '../../../Core/Domain/Repository/UserRepository';
 import { AppError } from '@util/appError.util';
 import { UpdateUserDto } from '../Dto/UpdateUserDto';
 

@@ -3,8 +3,8 @@ import { Header } from '@util/header.util';
 import { RestInterface } from '@interfaces/RestInterface';
 import { StatusCode } from '@http/StatusCode';
 
-import { UpdateUser } from 'app/Core/Domain/Service/UpdateUser';
-import { UpdateUserDto } from 'app/Core/Domain/Dto/UpdateUserDto';
+import { UpdateUser } from '@app/User/Domain/Service/UpdateUser';
+import { UpdateUserDto } from '@app/User/Domain/Dto/UpdateUserDto';
 
 export class UpdateUserAction implements RestInterface {
     public async respond(
