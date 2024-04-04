@@ -1,5 +1,4 @@
-import { validate } from 'class-validator';
-import { userRepository } from '../Repository/UserRepository';
+import { userRepository } from '../../../Core/Domain/Repository/UserRepository';
 import { AppError } from '@util/appError.util';
 import { UpdateUserDto } from '../Dto/UpdateUserDto';
 
@@ -15,11 +14,6 @@ export class UpdateUser {
 
         user.name = updateUserDto.name;
 
-        const errors = await validate(user);
-        if (errors.length > 0) {
-            throw new AppError('Ocorreu um erro. Tente Novamente');
-        } else {
-            await userRepository.save(user);
-        }
+        await userRepository.save(user);
     }
 }

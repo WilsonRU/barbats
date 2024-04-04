@@ -1,5 +1,4 @@
 import bcrypt from 'bcrypt';
-import { validate } from 'class-validator';
 import { AppError } from '@util/appError.util';
 import { CreateUserDto } from '../Dto/CreateUserDto';
 import { userRepository } from '../Repository/UserRepository';
@@ -22,15 +21,11 @@ export class CreateUser {
         const user = userRepository.create({
             email: createUserDto.email,
             password: passwordHash,
-            name: createUserDto.name,
+            name: createUserDto.password,
         });
 
-        const errors = await validate(user);
-        if (errors.length > 0) {
-            throw new AppError('Ocorreu um erro. Tente Novamente');
-        } else {
-            await userRepository.save(user);
-        }
+        await userRepository.save(user);
+
         return user;
     }
 }
